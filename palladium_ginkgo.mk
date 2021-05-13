@@ -26,9 +26,9 @@ $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 # Inherit some common PalladiumOS stuff.
 $(call inherit-product, vendor/palladium/config/common_full_phone.mk)
 
-# PALLADIUM-PROPS
+#PALLADIUM-PROPS
 PRODUCT_PRODUCT_PROPERTIES += \
-    ro.palladiumdevice.maintainer=CHRISL7 \
+    ro.palladiumdevice.maintainer=MRROBOTMK \
     ro.palladiumdevice.display=6.67 \
     ro.palladiumdevice.displaytype=FULLHD+
 
