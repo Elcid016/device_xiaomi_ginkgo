@@ -23,19 +23,28 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from ginkgo device
 $(call inherit-product, device/xiaomi/ginkgo/device.mk)
 
-# Inherit some common DotOS stuff
-DOT_OFFICIAL := true
-TARGET_BOOT_ANIMATION_RES := 1080
-TARGET_INCLUDE_PIXEL_CHARGER := true
-$(call inherit-product, vendor/dot/config/common.mk)
+# Inherit some common PalladiumOS stuff.
+$(call inherit-product, vendor/palladium/config/common_full_phone.mk)
+
+# PALLADIUM-PROPS
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.palladiumdevice.maintainer=CHRISL7 \
+    ro.palladiumdevice.display=6.67 \
+    ro.palladiumdevice.displaytype=FULLHD+
+
+# OFFICIAL
+PALLADIUM_BUILDTYPE := OFFICIAL
 
 # Device identifier
-PRODUCT_NAME := dot_ginkgo
+PRODUCT_NAME := palladium_ginkgo
 PRODUCT_DEVICE := ginkgo
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Redmi Note 8
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+TARGET_BOOT_ANIMATION_RES := 1080
+TARGET_FACE_UNLOCK_SUPPORTED := true
 
 # Fingerprint
 BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys
